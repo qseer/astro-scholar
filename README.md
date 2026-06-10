@@ -73,6 +73,15 @@ Layout and components:
 - `src/components/Header.astro`: top navigation
 - `src/components/Footer.astro`: footer
 
+## Analytics (optional)
+
+[Umami](https://umami.is) analytics is built in and disabled by default — no tracking ID is committed. To enable it, set the `PUBLIC_UMAMI_WEBSITE_ID` environment variable to your own Umami website ID:
+
+- Locally: add `PUBLIC_UMAMI_WEBSITE_ID=your-id` to a `.env` file.
+- On GitHub Pages: add it as an Actions secret/variable (it's passed to the build in `website-deploy.yml`).
+
+Self-hosting Umami? Override the script URL with `PUBLIC_UMAMI_SRC`. Leave the ID unset to keep analytics off.
+
 ## Deployment
 
 This repo is ready for GitHub Pages.

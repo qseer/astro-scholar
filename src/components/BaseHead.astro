@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, UMAMI_SRC, UMAMI_WEBSITE_ID } from '../consts';
 import { url } from '../utils/paths';
 
 interface Props {
@@ -178,3 +178,8 @@ const imageUrl = typeof image === 'string'
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageUrl} />
+
+<!-- Umami Analytics -->
+{UMAMI_WEBSITE_ID && (
+	<script is:inline defer src={UMAMI_SRC} data-website-id={UMAMI_WEBSITE_ID}></script>
+)}
